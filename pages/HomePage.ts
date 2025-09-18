@@ -12,6 +12,7 @@ private readonly txtSearchbox:  Locator;
 private readonly btnSearch:     Locator;
 
 
+
 //--------constructors---------
 
 constructor(page:Page)
@@ -24,9 +25,11 @@ constructor(page:Page)
     this.btnSearch=page.locator('span[class="input-group-btn"]>button[type="button"]');
 }
 
-//---------action method--------
 
-        //check if HomePage exist
+
+//---------action method--------
+//check if HomePage exist
+
 async isHomePageExist()
 {
     let title:string = await this.page.title();
@@ -35,31 +38,58 @@ async isHomePageExist()
         return true;
     }
     return false;
-
 }
 
-// Click "My Account" link
 
-async clickMyAccount()
-{   try{
-    await this.lnkMyAccount.click();
+
+// Click "My Account" link
+async clickMyAccount(){
+    try{
+        await this.lnkMyAccount.click();
     }catch(error){
         console.log(`Exception occured while checking 'My Account':${error}`);
         throw error;
+    }
+}
+
+
+                // click "login" lnk
+async clickLogin(){
+    try{
+        await this.linklogin.click();
+    }catch(error){
+        console.log(`Exception occured while checking 'clickLogin':${error}`);
+        throw error;
+    }
+}
+
+
+            // Enter product name in the searchbox
+async enterProductName(pName:string){
+    try{
+        await this.txtSearchbox.fill(pName);
+    }catch(error){
+        console.log(`Exception occured while checking 'enterProductName':${error}`);
+        throw error;
+    }
+    }
+
+
+
+async clickSearch(){
+       try{
+        await this.btnSearch.click();
+    }catch(error){
+        console.log(`Exception occured while checking 'clicksearch':${error}`);
+        throw error;
+        }
     }
 
 
 
 }
 
+ 
 
 
 
-
-
-}
-
-//action method
-
-
-}
