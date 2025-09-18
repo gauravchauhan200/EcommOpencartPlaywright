@@ -43,19 +43,71 @@ export class RegistrationPage
         //@param lname - last name to enter
         async setLastName(lName:string): Promise<void>
         {
-            this.txtLastname.fill(lName);
+           await this.txtLastname.fill(lName);
         }
        
         //@param email - email to enter
         async setEmail(email:string):Promise<void>
         {
-            this.txtEmail.fill("email");
+             await this.txtEmail.fill(email);
+        }
+
+        async setTelephone(tel:string): Promise<void>
+        {
+             await this.txtTelephone.fill(tel);
+        }
+
+        async setPassword(pass:string): Promise<void>
+        {
+             await this.txtPassword.fill(pass);
+        }
+
+        async setConfirmPassword(confPass:string):Promise<void>
+        {
+            await this.txtConfirmPassword.fill(confPass);
+        }
+
+        async setPrivacyPolicy():Promise<void>
+        {
+            await this.chkdPolicy.check();
+        }
+
+        async clickContinue():Promise<void>
+        {
+             await this.btnContinue.click();
+        }
+
+        //Get the confirmation message text
+        //@return Promise<string>- Confirmation message text
+
+        async getMsgConfirmation():Promise<string>
+        {
+            return await this.msgConfirmation.textContent() ?? '';
         }
 
 
 
+        
 
+        //complete registration workflow
+        //@param userData - Object contaning registration data
 
+        async completeRegistration(userData:{firstName:string;
+            lastName:string;
+            email:string;
+            telephone:string;
+            password:string;}):Promise<void>
+        {
+            await this.setFirstName(userData.firstName);
+            await this.setLastName(userData.lastName);
+            await this.setEmail(userData.email);
+            await this.setTelephone(userData.password);
+            await this.setConfirmPassword(userData.password);
+            await this.setPrivacyPolicy();
+            await this.clickContinue();
+            await expect(this.msgConfirmation).toBeVisible();
+            
+        }
 
 
 }
