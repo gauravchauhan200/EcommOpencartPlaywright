@@ -5,8 +5,8 @@ export class TestConfig{
     ///appUrl="https://tutorialsninja.com/demo/"
 
 //valid login credentials- create your own login account
-    email="pavanol@abc.com"
-    password="test@123"
+    email="opencart@gmail.com"
+    password="123456789"
     
 //product details
     productName="MacBook"

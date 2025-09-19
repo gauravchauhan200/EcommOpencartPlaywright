@@ -63,6 +63,15 @@ async clickLogin(){
     }
 }
 
+async clickRegistration(){
+    try{
+        await this.lnkRegister.click();
+    }catch(error){
+        console.log(`Exception occured while checking 'ClickRegister':${error}`);
+        throw error;
+    }
+}
+
 
             // Enter product name in the searchbox
 async enterProductName(pName:string){
