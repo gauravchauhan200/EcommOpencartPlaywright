@@ -21,14 +21,16 @@ let homePage: HomePage;
 let registraionPage: RegistrationPage;
 
 
-test.beforeEach(async ({ page }) => {
 
+// This hook runs before each test
+test.beforeEach(async ({ page }) => {
     config = new TestConfig();
     await page.goto(config.appUrl);
     homePage = new HomePage(page);
     registraionPage = new RegistrationPage(page);
 })
 
+//This hook runs after each test
 test.afterEach(async ({ page }) => {
     await page.waitForTimeout(3000);
 })
