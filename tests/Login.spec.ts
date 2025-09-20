@@ -38,7 +38,7 @@ test.afterEach(async ({ page }) => {
 
 
 
-test('User login test',async()=>{
+test('User login test @master @sanity @regression',async()=>{
    
     //Navigate to login page via HomePage
 

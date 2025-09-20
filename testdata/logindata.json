@@ -1,15 +1,15 @@
 [
-{
-    "testName": "Valid login",
-    "email":"pavanol@abc.com",
-    "password":"test@123",
-    "expected":"success"
-},
-{
-    "testName":"Invalid login",
-    "email":"abcxyz@xyz.com",
-    "password":"abcxyz",
-    "expected": "failure"
-
-}
+    {
+        "testName": "Valid login",
+        "email": "opencart@gmail.com",
+        "password": "123456789",
+        "expected": "success"
+    },
+    {
+        "testName": "Invalid login",
+        "email": "abcrxyz@xyz.com",
+        "password": "abgcxyz",
+        "expected": "failure"
+    }
 ]
+

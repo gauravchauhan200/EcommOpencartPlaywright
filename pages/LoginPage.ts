@@ -18,7 +18,7 @@ export class LoginPage {
         this.txtLoginId = page.locator('#input-email');
         this.txtPassword = page.locator('#input-password');
         this.loginBtn = page.locator('input[value="Login"]');
-        this.txtErrorMessage =page.locator('.fa.fa-exclamation-circle');
+        this.txtErrorMessage =page.locator('.alert.alert-danger.alert-dismissible');
     
     }
 

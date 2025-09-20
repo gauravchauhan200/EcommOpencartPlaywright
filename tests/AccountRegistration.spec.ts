@@ -37,7 +37,7 @@ test.afterEach(async ({ page }) => {
 
 
 
-test('User registration', async () => {
+test('User registration test @master @sanity @regression', async () => {
 
     //Goto My account click the Registration
 
